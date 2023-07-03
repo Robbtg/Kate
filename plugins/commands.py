@@ -23,8 +23,9 @@ logger = logging.getLogger(__name__)
 async def start(client, message):
     if message.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
         btn = [[
-            InlineKeyboardButton('⚡️ Updates Channel ⚡️', url=UPDATES_LINK),
-            InlineKeyboardButton('🔥 Support Group 🔥', url=SUPPORT_LINK)
+        InlineKeyboardButton('🎬 Join Movie Updates Channel 🎬', url=UPDATES_LINK)],
+               [
+        InlineKeyboardButton('⚜️ Join Movie Request Group ⚜️', url=SUPPORT_LINK)
         ]]
         s = await message.reply_sticker(sticker=random.choice(STICKERS), reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(30)
@@ -46,10 +47,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +", url=f'http://t.me/{temp.U_NAME}?startgroup=start')
         ],[
-            InlineKeyboardButton('ᴏᴡɴᴇʀ', callback_data='my_owner'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='my_about')
+            InlineKeyboardButton('🎬 Join Movie Updates Channel 🎬', url=UPDATES_LINK)],
+                  [
+            InlineKeyboardButton('⚜️ Join Movie Request Group ⚜️', url=SUPPORT_LINK)
         ],[
-            InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ ʙʏ ʙᴏᴛ', callback_data='earn')
+            InlineKeyboardButton('🔱 Join Premium Group 🔱', url=f't.me/maeve_324')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -87,10 +89,11 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton("+ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ +", url=f'http://t.me/{temp.U_NAME}?startgroup=start')
         ],[
-            InlineKeyboardButton('ᴏᴡɴᴇʀ', callback_data='my_owner'),
-            InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='my_about')
+            InlineKeyboardButton('🎬 Join Movie Updates Channel 🎬', url=UPDATES_LINK)],
+                  [
+            InlineKeyboardButton('⚜️ Join Movie Request Group ⚜️', url=SUPPORT_LINK)
         ],[
-            InlineKeyboardButton('ᴇᴀʀɴ ᴍᴏɴᴇʏ ʙʏ ʙᴏᴛ', callback_data='earn')
+            InlineKeyboardButton('🔱 Join Premium Group 🔱', url=f't.me/maeve_324')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -106,7 +109,7 @@ async def start(client, message):
         _, grp_id, pre, key = mc.split("_", 3)
         files = temp.FILES.get(key)
         if not files:
-            return await message.reply('No Such All Files Exist!')
+            return await message.reply('No Such Files Exist!')
         settings = await get_settings(int(grp_id))
         for file in files:
             CAPTION = settings['caption']
@@ -117,9 +120,10 @@ async def start(client, message):
             )
             
             btn = [[
-                InlineKeyboardButton('⚡️ Updates Channel ⚡️', url=UPDATES_LINK),
-                InlineKeyboardButton('🔥 Support Group 🔥', url=SUPPORT_LINK)
-            ]]
+        InlineKeyboardButton('🎬 Join Movie Updates Channel 🎬', url=UPDATES_LINK)],
+                  [
+        InlineKeyboardButton('⚜️ Join Movie Request Group ⚜️', url=SUPPORT_LINK)
+        ]]
             await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file.file_id,
@@ -143,9 +147,10 @@ async def start(client, message):
     )
     
     btn = [[
-        InlineKeyboardButton('⚡️ Updates Channel ⚡️', url=UPDATES_LINK),
-        InlineKeyboardButton('🔥 Support Group 🔥', url=SUPPORT_LINK)
-    ]]
+        InlineKeyboardButton('🎬 Join Movie Updates Channel 🎬', url=UPDATES_LINK)],
+               [
+        InlineKeyboardButton('⚜️ Join Movie Request Group ⚜️', url=SUPPORT_LINK)
+        ]]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
