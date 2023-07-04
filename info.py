@@ -54,7 +54,7 @@ CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 
 # Other
 IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "✅ I Found: <code>{query}</code>\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating} / 10</a>\n☀️ Languages: {languages}\n📀 RunTime: {runtime} Minutes\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>")
-FILE_CAPTION = environ.get("FILE_CAPTION", "<b>File: </b <code>{file_name}</code> \n \n <b>‼️ Join •  \n \n 🔗 @MvM_Links  \n \n  ⚠️ Share File Now ⚠️</b>")
+FILE_CAPTION = environ.get("FILE_CAPTION", "<b>File: {file_name}</b> \n \n <b>‼️ Join •  \n \n 🔗 @MvM_Links  \n \n  ⚠️ Share File Now ⚠️</b>")
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 SHORTLINK_URL = environ.get("SHORTLINK_URL", "mdisklink.link")
 SHORTLINK_API = environ.get("SHORTLINK_API", "5843c3cc645f5077b2200a2c77e0344879880b3e")
