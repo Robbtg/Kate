@@ -183,7 +183,7 @@ async def advantage_spoll_choker(bot, query):
         await auto_filter(bot, query, k)
     else:
         await bot.send_message(LOG_CHANNEL, script.NO_RESULT_TXT.format(query.message.chat.title, query.message.chat.id, query.from_user.mention, search))
-        k = await query.message.edit(f"👋 Hello {query.from_user.mention},\n\n <b>I don't find </b><b>'{search}'</b><b> in my Database<\b> /n /n <b> Maybe Not Yet Released In OTT Platforms ⚠️</b>")
+        k = await query.message.edit(f"👋 Hello {query.from_user.mention},\n\n <b>I couldn't find </b><b>'{search}'</b><b> in my Database</b> \n \n <b> Maybe Not Yet Released In OTT Platforms ⚠️</b>")
         await asyncio.sleep(60)
         await k.delete()
         try:
@@ -878,8 +878,8 @@ async def auto_filter(client, msg, spoll=False):
                 await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
     else:
         if settings["auto_delete"]:
-            k = await message.reply_text(cap + "\n\n<i>⚠️ This message will be auto delete after One Hours to avoid copyright issues.</i>", reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
-            await asyncio.sleep(3600)
+            k = await message.reply_text(cap + "\n\n<i><b>⚠️ This Message Will Be Deleted in 30 Mins To Avoid Copyright Issue ‼️</b></i>", reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
+            await asyncio.sleep(1800)
             await k.delete()
             try:
                 await message.delete()
