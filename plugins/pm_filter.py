@@ -116,13 +116,13 @@ async def next_page(bot, query):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"✨ {get_size(file.file_size)} ⚡️ {file.file_name}", callback_data=f'{pre}#{file.file_id}',
+                    text=f"🍿 {get_size(file.file_size)} 🎬 {file.file_name}", callback_data=f'{pre}#{file.file_id}',
                 )
             ]
             for file in files
         ]
         btn.insert(0,
-            [InlineKeyboardButton("🎈 Send All 🎈", callback_data=f"send_all#{pre}#{key}")]
+            [InlineKeyboardButton("📤 Send All 📤", callback_data=f"send_all#{pre}#{key}")]
         )
 
     if 0 < offset <= 10:
