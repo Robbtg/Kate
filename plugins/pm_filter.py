@@ -777,13 +777,13 @@ async def auto_filter(client, msg, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"✨ {get_size(file.file_size)} ⚡️ {file.file_name}", callback_data=f'{pre}#{file.file_id}',
+                    text=f"🍿 {get_size(file.file_size)} 🎬 {file.file_name}", callback_data=f'{pre}#{file.file_id}',
                 )
             ]
             for file in files
         ]
         btn.insert(0,
-            [InlineKeyboardButton("🎈 Send All 🎈", callback_data=f"send_all#{pre}#{key}")]
+            [InlineKeyboardButton("📤 Send All 📤", callback_data=f"send_all#{pre}#{key}")]
         )
 
     if offset != "":
